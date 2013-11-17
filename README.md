@@ -27,3 +27,9 @@ We've also included a couple of Yeoman sub-generators to simplify common develop
 `yo meteor:view my_view`
 
 Creates `my_view.html` and `my_view.coffee` in `clients/views/my_view/`
+
+### package
+
+`yo meteor:package my-package`
+
+Scaffolds and installs a new package called "meteor-my-package".

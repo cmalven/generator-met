@@ -83,6 +83,7 @@ MeteorGenerator.prototype.server = function app() {
 
 MeteorGenerator.prototype.app = function app() {
   this.mkdir('public');
+  this.mkdir('packages');
   this.copy('gitignore', '.gitignore');
   this.copy('smart.json', 'smart.json');
   this.template('_README.md', 'README.md');

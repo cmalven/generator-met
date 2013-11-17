@@ -10,9 +10,8 @@ var MeteorGenerator = module.exports = function MeteorGenerator(args, options, c
 
   this.on('end', function () {
     console.log('All set! Run `mrt install && meteor` to start your app.');
-    // this.installDependencies({ skipInstall: options['skip-install'] });
-    // We ideally want to run `mrt install && meteor` here
-    open('http://localhost:3000/');
+    // mrt install && meteor
+    // open('http://localhost:3000/');
   });
 };
 

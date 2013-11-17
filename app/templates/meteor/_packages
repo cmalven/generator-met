@@ -6,8 +6,8 @@
 standard-app-packages
 autopublish
 insecure
-preserve-inputs<% if (useCoffeescript) { %>
-coffeescript<% } %><% if (cssPreprocessor == 'stylus') { %>
+preserve-inputs
+coffeescript<% if (cssPreprocessor == 'stylus') { %>
 stylus<% } %><% if (cssPreprocessor == 'less') { %>
 less<% } %><% if (cssPreprocessor == 'bootstrap') { %>
 bootstrap<% } %>

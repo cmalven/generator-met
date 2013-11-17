@@ -34,12 +34,6 @@ MeteorGenerator.prototype.askFor = function askFor() {
       message: 'Describe this project briefly'
     },
     {
-      type: 'confirm',
-      name: 'useCoffeescript',
-      message: 'Use CoffeScript?',
-      default: true
-    },
-    {
       type: 'list',
       name: 'cssPreprocessor',
       message: 'Choose a CSS Preprocessor',
@@ -50,7 +44,6 @@ MeteorGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
     this.projectSummary = props.projectSummary;
-    this.useCoffeescript = props.useCoffeescript;
     this.cssPreprocessor = props.cssPreprocessor;
 
     cb();

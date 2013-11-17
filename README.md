@@ -6,7 +6,7 @@ An opinionated Meteor.js scaffolding tool for Yeoman.
 
 ## Getting Started
 
-The following command will scaffold a new meteor app for you, including the `iron-router`, `fastclick`, `jquery`, and `underscore` packages by default, along with optional `coffeescript` and your choice of `stylus`, `less`, or `bootstrap` for CSS preprocessing:
+The following command will scaffold a new meteor app for you, including the `iron-router`, `fastclick`, `jquery`, `coffeescript`, and `underscore` packages by default, and your choice of `stylus`, `less`, or `bootstrap` for CSS preprocessing:
 
 ```
 yo meteor

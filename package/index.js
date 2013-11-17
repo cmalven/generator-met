@@ -7,7 +7,7 @@ var PackageGenerator = module.exports = function PackageGenerator(args, options,
   // as `this.name`.
   yeoman.generators.NamedBase.apply(this, arguments);
 
-  console.log('Creating a new package meteor-' + this.name + '.');
+  console.log('Creating a new package ' + this.name + '.');
 };
 
 util.inherits(PackageGenerator, yeoman.generators.NamedBase);

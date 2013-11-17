@@ -32,4 +32,4 @@ Creates `my_view.html` and `my_view.coffee` in `clients/views/my_view/`
 
 `yo meteor:package my-package`
 
-Scaffolds and installs a new package called "meteor-my-package".
+Scaffolds and installs a new package called "my-package".

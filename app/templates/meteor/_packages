@@ -1,0 +1,17 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+standard-app-packages
+autopublish
+insecure
+preserve-inputs<% if (useCoffeescript) { %>
+coffeescript<% } %><% if (cssPreprocessor == 'stylus') { %>
+stylus<% } %><% if (cssPreprocessor == 'less') { %>
+less<% } %><% if (cssPreprocessor == 'bootstrap') { %>
+bootstrap<% } %>
+jquery
+iron-router
+fastclick
+underscore

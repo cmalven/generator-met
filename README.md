@@ -89,6 +89,6 @@ Scaffolds and installs a new package called "my-package".
 
 ### collection
 
-`yo meteor:collection dogs`
+`yo meteor:collection animals`
 
-Creates a new collection about publication.
+Creates a new collection in `lib/collections/animals.coffee` and publication in `server/publications/animals.coffee`.

@@ -63,7 +63,7 @@ MeteorGenerator.prototype.meteor = function app() {
 
 MeteorGenerator.prototype.lib = function app() {
   this.mkdir('lib');
-  this.mkdir('lib/models');
+  this.mkdir('lib/collections');
 };
 
 MeteorGenerator.prototype.client = function app() {
@@ -80,7 +80,7 @@ MeteorGenerator.prototype.server = function app() {
   this.mkdir('server');
   this.copy('server/main.coffee', 'server/main.coffee');
   this.copy('server/methods.coffee', 'server/methods.coffee');
-  this.copy('server/publications.coffee', 'server/publications.coffee');
+  this.mkdir('server/publications');
 };
 
 MeteorGenerator.prototype.app = function app() {

@@ -4,7 +4,28 @@ An opinionated Meteor.js scaffolding tool for Yeoman.
 
 ----
 
-## Getting Started
+## Setup
+
+Before you'll get any use out of this, you'll need to install [Meteor](http://docs.meteor.com/#quickstart) and [Meteorite](https://github.com/oortcloud/meteorite/) and [Yeoman](http://yeoman.io/gettingstarted.html)
+
+Here are the combined instructions at the time of this writing:
+
+```
+# Meteor
+curl https://install.meteor.com | /bin/sh
+
+# Meteorite
+npm install -g meteorite
+
+# Yeoman
+npm install -g yo
+
+# This generator (not yet on npm)
+npm install -g git+https://github.com/cmalven/generator-meteor.git
+```
+
+
+## Scaffolding
 
 The following command will scaffold a new meteor app for you, including the `iron-router`, `fastclick`, `jquery`, `coffeescript`, and `underscore` packages by default, and your choice of `stylus`, `less`, or `bootstrap` for CSS preprocessing:
 

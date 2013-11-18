@@ -18,7 +18,7 @@ PackageGenerator.prototype.askFor = function askFor() {
   var prompts = [
     {
       name: 'packageSummary',
-      message: 'Describe this project briefly'
+      message: 'Describe this package briefly'
     },
     {
       type: 'checkbox',

@@ -50,6 +50,8 @@ The generated app will have the following structure by default:
         packages
         release
     client/
+    	main.coffee
+    	router.coffee
         vendor/
         views/
         	index/
@@ -58,13 +60,13 @@ The generated app will have the following structure by default:
         	layout/
         		layout.html
     lib/
-        models/
+        collections/
     packages/
     public/
     server/
         main.coffee
 		methods.coffee
-		publications.coffee
+    	publications/
     .gitignore
 	smart.json
 	README.md

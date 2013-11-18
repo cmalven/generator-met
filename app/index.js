@@ -2,6 +2,7 @@
 var util = require('util');
 var path = require('path');
 var open = require('open');
+var chalk = require('chalk');
 var yeoman = require('yeoman-generator');
 
 
@@ -9,7 +10,7 @@ var MeteorGenerator = module.exports = function MeteorGenerator(args, options, c
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
-    console.log('All set! Run `mrt install && meteor` to start your app.');
+    console.log('\n' + chalk.cyan.bold('All set!') + ' Run ' + chalk.yellow.bold('mrt install && meteor') + ' to start your app.');
     // mrt install && meteor
     // open('http://localhost:3000/');
   });

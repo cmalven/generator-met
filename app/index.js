@@ -13,6 +13,10 @@ var MeteorGenerator = module.exports = function MeteorGenerator(args, options, c
     // mrt install && meteor
     // open('http://localhost:3000/');
   });
+
+  this.hookFor('meteor:view', {
+    args: ['index']
+  });
 };
 
 util.inherits(MeteorGenerator, yeoman.generators.Base);
@@ -66,11 +70,9 @@ MeteorGenerator.prototype.client = function app() {
   this.mkdir('client/vendor');
   this.mkdir('client/views');
   this.mkdir('client/views/layout');
-  this.mkdir('client/views/index');
   this.copy('client/main.coffee', 'client/main.coffee');
   this.copy('client/routes.coffee', 'client/routes.coffee');
   this.copy('client/views/layout/layout.html', 'client/views/layout/layout.html');
-  this.copy('client/views/index/index.html', 'client/views/index/index.html');
 };
 
 MeteorGenerator.prototype.server = function app() {

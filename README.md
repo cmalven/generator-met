@@ -18,6 +18,38 @@ After your app is scaffolded, you'll want to install Meteorite dependencies and 
 mrt install && meteor
 ```
 
+## Structure
+
+The generated app will have the following structure by default:
+
+```
+/
+    .meteor/
+        .gitignore
+        packages
+        release
+    client/
+        vendor/
+        views/
+        	index/
+        		index.html
+        		index.coffee
+        	layout/
+        		layout.html
+    lib/
+        models/
+    packages/
+    public/
+    server/
+        main.coffee
+		methods.coffee
+		publications.coffee
+    .gitignore
+	smart.json
+	README.md
+	index.html
+```
+
 ## Sub-Generators
 
 We've also included a couple of Yeoman sub-generators to simplify common development tasks:

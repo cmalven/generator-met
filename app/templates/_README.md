@@ -12,7 +12,7 @@
 curl https://install.meteor.com | /bin/sh
 
 # Install Meteorite
-sudo -H npm install -g meteorite
+npm install -g meteorite
 
 # Install Smart Packages
 mrt install
@@ -47,7 +47,7 @@ If possible, try not to install Meteorite as root either. If you have permission
 
 ### If that fails, get rid of Meteorite and reinstall
 ```
-sudo mrt uninstall && sudo mrt uninstall --system && sudo -H npm install -g meteorite && mrt install
+mrt uninstall && mrt uninstall --system && npm install -g meteorite && mrt install
 ```
 
 ### Or uninstall and reinstall Meteor

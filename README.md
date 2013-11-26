@@ -30,6 +30,7 @@ npm install -g git+https://github.com/cmalven/generator-meteor.git
 The following command will scaffold a new meteor app for you, including the `iron-router`, `fastclick`, `jquery`, `coffeescript`, and `underscore` packages by default, and your choice of `stylus`, `less`, or `bootstrap` for CSS preprocessing:
 
 ```
+mkdir my-app && cd my-app
 yo meteor
 ```
 

@@ -71,9 +71,11 @@ MeteorGenerator.prototype.client = function app() {
   this.mkdir('client/vendor');
   this.mkdir('client/views');
   this.mkdir('client/views/layout');
+  this.mkdir('client/views/loading');
   this.copy('client/main.coffee', 'client/main.coffee');
   this.copy('client/router.coffee', 'client/router.coffee');
   this.copy('client/views/layout/layout.html', 'client/views/layout/layout.html');
+  this.copy('client/views/loading/loading.html', 'client/views/loading/loading.html');
 };
 
 MeteorGenerator.prototype.server = function app() {

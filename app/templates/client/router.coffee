@@ -7,12 +7,12 @@ Router.map ->
   @route 'index',
     path: '/',
     template: 'index'
-#    waitOn: ->
-#      return Meteor.subscribe('foos')
-#    data: ->
-#      {
-#        foos: Foos.find()
-#      }
+    waitOn: ->
+      return Meteor.subscribe('foos')
+    data: ->
+      {
+        # foos: Foos.find()
+      }
 
 #  @route 'foos_show',
 #    path: '/foo/:_id',

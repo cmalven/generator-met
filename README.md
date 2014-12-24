@@ -17,7 +17,7 @@ curl https://install.meteor.com | /bin/sh
 # Yeoman
 npm install -g yo
 
-# This generator (not yet on npm)
+# This generator
 npm install -g generator-meteor-coffee
 ```
 

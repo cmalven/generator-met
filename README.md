@@ -14,14 +14,11 @@ Here are the combined instructions at the time of this writing:
 # Meteor
 curl https://install.meteor.com | /bin/sh
 
-# Meteorite
-npm install -g meteorite
-
 # Yeoman
 npm install -g yo
 
 # This generator (not yet on npm)
-npm install -g git+https://github.com/cmalven/generator-meteor.git
+npm install -g generator-meteor-coffee
 ```
 
 
@@ -37,7 +34,7 @@ yo meteor
 After your app is scaffolded, you'll want to install Meteorite dependencies and start your app with:
 
 ```
-mrt install && meteor
+meteor
 ```
 
 ## Structure

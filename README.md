@@ -69,7 +69,6 @@ The generated app will have the following structure by default:
 		methods.coffee
     	publications/
     .gitignore
-	smart.json
 	README.md
 	index.html
 ```

@@ -89,7 +89,6 @@ MeteorGenerator.prototype.app = function app() {
   this.mkdir('public');
   this.mkdir('packages');
   this.copy('gitignore', '.gitignore');
-  this.copy('smart.json', 'smart.json');
   this.template('_README.md', 'README.md');
   this.template('_index.html', 'index.html');
 };

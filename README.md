@@ -6,7 +6,7 @@ An opinionated Meteor.js scaffolding tool for Yeoman.
 
 ## Setup
 
-Before you'll get any use out of this, you'll need to install [Meteor](http://docs.meteor.com/#quickstart) and [Meteorite](https://github.com/oortcloud/meteorite/) and [Yeoman](http://yeoman.io/gettingstarted.html)
+Before you'll get any use out of this, you'll need to install [Meteor](http://docs.meteor.com/#quickstart) and [Yeoman](http://yeoman.io/gettingstarted.html)
 
 Here are the combined instructions at the time of this writing:
 
@@ -31,7 +31,7 @@ mkdir my-app && cd my-app
 yo meteor
 ```
 
-After your app is scaffolded, you'll want to install Meteorite dependencies and start your app with:
+After your app is scaffolded, you'll want to install dependencies and start your app with:
 
 ```
 meteor

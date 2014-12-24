@@ -28,7 +28,7 @@ The following command will scaffold a new meteor app for you, including the `iro
 
 ```
 mkdir my-app && cd my-app
-yo meteor
+yo meteor-coffee
 ```
 
 After your app is scaffolded, you'll want to install dependencies and start your app with:

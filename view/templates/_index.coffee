@@ -1,17 +1,17 @@
 Template.<%= name %>.helpers
 
-  foo: ->
-    return "You're in the <%= name %> view!"
+  # foo: ->
+  #   return "You're in the <%= name %> view!"
 
 Template.<%= name %>.created = ->
-  console.log 'created!'
+  # console.log 'created!'
 
 Template.<%= name %>.rendered = ->
-  console.log 'rendered!'
+  # console.log 'rendered!'
 
 Template.<%= name %>.destroyed = ->
-  console.log 'destroyed!'
+  # console.log 'destroyed!'
   
 Template.<%= name %>.events
-  'click .foo': (evt) ->
-    # Event Callback
+  # 'click .foo': (evt) ->
+  #    Event Callback

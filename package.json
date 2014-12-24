@@ -1,5 +1,5 @@
 {
-  "name": "generator-meteor",
+  "name": "generator-meteor-coffee",
   "version": "0.0.0",
   "description": "A Meteor.js app scaffolding tool using Yeoman.",
   "keywords": [

@@ -9,6 +9,6 @@ stylus<% } %><% if (cssPreprocessor == 'less') { %>
 less<% } %><% if (cssPreprocessor == 'bootstrap') { %>
 bootstrap<% } %>
 jquery
-iron-router
+iron:router
 fastclick
 underscore

@@ -76,18 +76,18 @@ We've also included a couple of Yeoman sub-generators to simplify common develop
 
 ### view
 
-`yo meteor:view my_view`
+`yo meteor-coffee:view my_view`
 
 Creates `my_view.html` and `my_view.coffee` in `clients/views/my_view/`
 
 ### package
 
-`yo meteor:package my-package`
+`yo meteor-coffee:package my-package`
 
 Scaffolds and installs a new package called "my-package".
 
 ### collection
 
-`yo meteor:collection animals`
+`yo meteor-coffee:collection animals`
 
 Creates a new collection in `lib/collections/animals.coffee` and publication in `server/publications/animals.coffee`.

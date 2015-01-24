@@ -13,7 +13,12 @@ var ViewGenerator = module.exports = function ViewGenerator(args, options, confi
 util.inherits(ViewGenerator, yeoman.generators.NamedBase);
 
 ViewGenerator.prototype.files = function files() {
-  this.mkdir('client/views/' + this.name);
-  this.template('_index.html', 'client/views/' + this.name + '/' + this.name + '.html');
-  this.template('_index.coffee', 'client/views/' + this.name + '/' + this.name + '.coffee');
+  if (this.flatHierarchyViews == false) {
+    this.mkdir('client/views/' + this.name);
+    this.template('_index.html', 'client/views/' + this.name + '/' + this.name + '.html');
+    this.template('_index.coffee', 'client/views/' + this.name + '/' + this.name + '.coffee');
+  } else {
+    this.template('_index.html', 'client/views/' + this.name + '.html');
+    this.template('_index.coffee', 'client/views/' + this.name + '.coffee');
+  }
 };

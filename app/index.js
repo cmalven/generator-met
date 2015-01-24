@@ -38,16 +38,23 @@ MeteorGenerator.prototype.askFor = function askFor() {
       message: 'Describe this project briefly'
     },
     {
+      type: 'confirm',
+      name: 'flatHierarchyViews',
+      message: 'Use flat hierarchy for views?',
+      default: false
+    },
+    {
       type: 'list',
       name: 'cssPreprocessor',
       message: 'Choose a CSS Preprocessor',
       choices: ['stylus', 'less', 'bootstrap', 'none']
-    }
+    },
   ];
 
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
     this.projectSummary = props.projectSummary;
+    this.flatHierarchyViews = props.flatHierarchyViews;
     this.cssPreprocessor = props.cssPreprocessor;
 
     cb();
@@ -70,12 +77,19 @@ MeteorGenerator.prototype.client = function app() {
   this.mkdir('client');
   this.mkdir('client/vendor');
   this.mkdir('client/views');
-  this.mkdir('client/views/layout');
-  this.mkdir('client/views/loading');
+  if (this.flatHierarchyViews == false) {
+    this.mkdir('client/views/layout');
+    this.mkdir('client/views/loading');
+  }
   this.copy('client/main.coffee', 'client/main.coffee');
   this.copy('client/router.coffee', 'client/router.coffee');
-  this.copy('client/views/layout/layout.html', 'client/views/layout/layout.html');
-  this.copy('client/views/loading/loading.html', 'client/views/loading/loading.html');
+  if (this.flatHierarchyViews == false) {
+    this.copy('client/views/layout/layout.html', 'client/views/layout/layout.html');
+    this.copy('client/views/loading/loading.html', 'client/views/loading/loading.html');
+  } else {
+    this.copy('client/views/layout/layout.html', 'client/views/layout.html');
+    this.copy('client/views/loading/loading.html', 'client/views/loading.html');
+  }
 };
 
 MeteorGenerator.prototype.server = function app() {

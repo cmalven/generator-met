@@ -38,10 +38,14 @@ MeteorGenerator.prototype.askFor = function askFor() {
       message: 'Describe this project briefly'
     },
     {
-      type: 'confirm',
-      name: 'flatHierarchyViews',
-      message: 'Use flat hierarchy for views?',
-      default: false
+      type: 'list',
+      name: 'viewHierarchy',
+      message: 'How would you like your views to be organized?',
+      choices: [
+        { name: 'Nested: Each pair of .html and .coffee template files gets its own directory', value: 'nested' },
+        { name: 'Flat: All .html and .coffee template files share the same directory', value: 'flat' }
+      ],
+      default: 'nested'
     },
     {
       type: 'list',
@@ -54,10 +58,10 @@ MeteorGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
     this.projectSummary = props.projectSummary;
-    this.flatHierarchyViews = props.flatHierarchyViews;
+    this.viewHierarchy = props.viewHierarchy;
     this.cssPreprocessor = props.cssPreprocessor;
     
-    this.config.set('flatHierarchyViews', this.flatHierarchyViews);
+    this.config.set('viewHierarchy', this.viewHierarchy);
     this.config.save();
 
     cb();
@@ -80,13 +84,13 @@ MeteorGenerator.prototype.client = function app() {
   this.mkdir('client');
   this.mkdir('client/vendor');
   this.mkdir('client/views');
-  if (this.flatHierarchyViews === false) {
+  if (this.viewHierarchy == 'nested') {
     this.mkdir('client/views/layout');
     this.mkdir('client/views/loading');
   }
   this.copy('client/main.coffee', 'client/main.coffee');
   this.copy('client/router.coffee', 'client/router.coffee');
-  if (this.flatHierarchyViews === false) {
+  if (this.viewHierarchy == 'nested') {
     this.copy('client/views/layout/layout.html', 'client/views/layout/layout.html');
     this.copy('client/views/loading/loading.html', 'client/views/loading/loading.html');
   } else {

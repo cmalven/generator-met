@@ -1,4 +1,4 @@
-# generator-meteor
+# generator-met
 
 An opinionated Meteor.js scaffolding tool for Yeoman.
 
@@ -18,7 +18,7 @@ curl https://install.meteor.com | /bin/sh
 npm install -g yo
 
 # This generator
-npm install -g generator-meteor-coffee
+npm install -g generator-met
 ```
 
 
@@ -28,7 +28,7 @@ The following command will scaffold a new meteor app for you, including the `iro
 
 ```
 mkdir my-app && cd my-app
-yo meteor-coffee
+yo met
 ```
 
 After your app is scaffolded, you'll want to install dependencies and start your app with:
@@ -76,7 +76,7 @@ We've also included a couple of Yeoman sub-generators to simplify common develop
 
 ### view
 
-`yo meteor-coffee:view my_view`
+`yo met:view my_view`
 
 Creates `my_view.html` and `my_view.coffee`
 
@@ -87,12 +87,12 @@ The location of these files depends on the template hierarchy set for the projec
 
 ### package
 
-`yo meteor-coffee:package my-package`
+`yo met:package my-package`
 
 Scaffolds and installs a new package called "my-package".
 
 ### collection
 
-`yo meteor-coffee:collection animals`
+`yo met:collection animals`
 
 Creates a new collection in `lib/collections/animals.coffee` and publication in `server/publications/animals.coffee`.

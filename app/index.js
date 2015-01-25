@@ -15,7 +15,7 @@ var MetGenerator = module.exports = function MetGenerator(args, options, config)
     // open('http://localhost:3000/');
   });
 
-  this.hookFor('meteor-coffee:view', {
+  this.hookFor('met:view', {
     args: ['index']
   });
 };

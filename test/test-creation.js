@@ -11,12 +11,12 @@ describe('meteor coffee generator', function () {
                 return done(err);
             }
 
-            this.app = helpers.createGenerator('meteor-coffee:app',
+            this.app = helpers.createGenerator('met:app',
               ['../../app',
               '../../view']
             );
             
-            this.view = helpers.createGenerator('meteor-coffee:view',
+            this.view = helpers.createGenerator('mete:view',
               ['../../view'],
               ['testview']
             );

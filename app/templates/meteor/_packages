@@ -5,8 +5,8 @@
 
 standard-app-packages
 coffeescript<% if (cssPreprocessor == 'nemo64:bootstrap') { %>
-less<% } %>
-<%= cssPreprocessor %>
+less<% } %><% if (cssPreprocessor != 'none') { %>
+<%= cssPreprocessor %><% } %>
 jquery
 iron:router
 fastclick

@@ -27,7 +27,7 @@ describe('meteor coffee generator', function () {
 
     it('creates app with view templates inside a directory', function (done) {
       helpers.mockPrompt(this.app, {
-        'flatHierarchyViews': false
+        'viewHierarchy': 'nested'
       });
       this.app.run({}, function () {
         helpers.assertFile([
@@ -43,7 +43,7 @@ describe('meteor coffee generator', function () {
     it('creates app with view templates with a flat hierary', function (done) {
 
       helpers.mockPrompt(this.app, {
-        'flatHierarchyViews': true
+        'viewHierarchy': 'flat'
       });
       this.app.run({}, function () {
         helpers.assertFile([
@@ -57,7 +57,7 @@ describe('meteor coffee generator', function () {
     });
 
     it('creates view template inside a directory', function (done) {
-      this.view.config.set('flatHierarchyViews', false);
+      this.view.config.set('viewHierarchy', 'nested');
       this.view.config.save();
       this.view.run({}, function () {
         helpers.assertFile([
@@ -69,7 +69,7 @@ describe('meteor coffee generator', function () {
     });
     
     it('creates view template with a flat hierary', function (done) {
-      this.view.config.set('flatHierarchyViews', true);
+      this.view.config.set('viewHierarchy', 'flat');
       this.view.config.save();
       this.view.run({}, function () {
         helpers.assertFile([

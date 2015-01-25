@@ -7,7 +7,7 @@ var ViewGenerator = module.exports = function ViewGenerator(args, options, confi
   // as `this.name`.
   yeoman.generators.NamedBase.apply(this, arguments);
   
-  console.log('Creating a new ' + this.name + ' view (flat: ' + this.flatHierarchyViews + ').');
+  console.log('Creating a new ' + this.name + ' view.');
 };
 
 util.inherits(ViewGenerator, yeoman.generators.NamedBase);
@@ -15,7 +15,7 @@ util.inherits(ViewGenerator, yeoman.generators.NamedBase);
 ViewGenerator.prototype.files = function files() {
   var subpath = '';
   
-  if (this.config.get('flatHierarchyViews') === false) {
+  if (this.config.get('viewHierarchy') == 'nested') {
     this.mkdir('client/views/' + this.name);
     subpath = this.name + '/';
   }

@@ -6,14 +6,20 @@ var ViewGenerator = module.exports = function ViewGenerator(args, options, confi
   // By calling `NamedBase` here, we get the argument to the subgenerator call
   // as `this.name`.
   yeoman.generators.NamedBase.apply(this, arguments);
-
+  
   console.log('Creating a new ' + this.name + ' view.');
 };
 
 util.inherits(ViewGenerator, yeoman.generators.NamedBase);
 
 ViewGenerator.prototype.files = function files() {
-  this.mkdir('client/views/' + this.name);
-  this.template('_index.html', 'client/views/' + this.name + '/' + this.name + '.html');
-  this.template('_index.coffee', 'client/views/' + this.name + '/' + this.name + '.coffee');
+  var subpath = '';
+  
+  if (this.config.get('viewHierarchy') == 'nested') {
+    this.mkdir('client/views/' + this.name);
+    subpath = this.name + '/';
+  }
+  
+  this.template('_index.html', 'client/views/' + subpath + this.name + '.html');
+  this.template('_index.coffee', 'client/views/' + subpath + this.name + '.coffee');
 };

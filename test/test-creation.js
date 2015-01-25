@@ -4,35 +4,79 @@
 var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
-
-describe('meteor generator', function () {
+describe('meteor coffee generator', function () {
     beforeEach(function (done) {
-        helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+        helpers.testDirectory(path.join(__dirname, 'tmp'), function (err) {
             if (err) {
                 return done(err);
             }
 
-            this.app = helpers.createGenerator('meteor:app', [
-                '../../app'
-            ]);
+            this.app = helpers.createGenerator('meteor-coffee:app',
+              ['../../app',
+              '../../view']
+            );
+            
+            this.view = helpers.createGenerator('meteor-coffee:view',
+              ['../../view'],
+              ['testview']
+            );
+            
             done();
         }.bind(this));
     });
 
-    it('creates expected files', function (done) {
-        var expected = [
-            // add files you expect to exist here.
-            '.jshintrc',
-            '.editorconfig'
-        ];
+    it('creates app with view templates inside a directory', function (done) {
+      helpers.mockPrompt(this.app, {
+        'viewHierarchy': 'nested'
+      });
+      this.app.run({}, function () {
+        helpers.assertFile([
+          'client/views/layout/layout.html',
+          'client/views/loading/loading.html',
+          'client/views/index/index.html',
+          'client/views/index/index.coffee',
+        ]);
+        done();
+      });
+    });
 
-        helpers.mockPrompt(this.app, {
-            'someOption': true
-        });
-        this.app.options['skip-install'] = true;
-        this.app.run({}, function () {
-            helpers.assertFiles(expected);
-            done();
-        });
+    it('creates app with view templates with a flat hierary', function (done) {
+
+      helpers.mockPrompt(this.app, {
+        'viewHierarchy': 'flat'
+      });
+      this.app.run({}, function () {
+        helpers.assertFile([
+          'client/views/layout.html',
+          'client/views/loading.html',
+          'client/views/index.html',
+          'client/views/index.coffee'
+        ]);
+        done();
+      });
+    });
+
+    it('creates view template inside a directory', function (done) {
+      this.view.config.set('viewHierarchy', 'nested');
+      this.view.config.save();
+      this.view.run({}, function () {
+        helpers.assertFile([
+          'client/views/testview/testview.html',
+          'client/views/testview/testview.coffee',
+        ]);
+        done();
+      });
+    });
+    
+    it('creates view template with a flat hierary', function (done) {
+      this.view.config.set('viewHierarchy', 'flat');
+      this.view.config.save();
+      this.view.run({}, function () {
+        helpers.assertFile([
+          'client/views/testview.html',
+          'client/views/testview.coffee'
+        ]);
+        done();
+      });
     });
 });

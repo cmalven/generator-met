@@ -78,7 +78,12 @@ We've also included a couple of Yeoman sub-generators to simplify common develop
 
 `yo meteor-coffee:view my_view`
 
-Creates `my_view.html` and `my_view.coffee` in `clients/views/my_view/`
+Creates `my_view.html` and `my_view.coffee`
+
+The location of these files depends on the template hierarchy set for the project:
+
+- **Nested**: Template files are created in a new folder named after the template, such as `clients/views/my_view/`
+- - **Flat**: All template views are created in the same folder, `clients/views/`
 
 ### package
 

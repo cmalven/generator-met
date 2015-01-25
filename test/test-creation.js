@@ -40,7 +40,7 @@ describe('meteor coffee generator', function () {
       });
     });
 
-    it('creates app with view templates with a flat hierary', function (done) {
+    it('creates app with view templates with a flat hierarchy', function (done) {
 
       helpers.mockPrompt(this.app, {
         'viewHierarchy': 'flat'
@@ -68,7 +68,7 @@ describe('meteor coffee generator', function () {
       });
     });
     
-    it('creates view template with a flat hierary', function (done) {
+    it('creates view template with a flat hierarchy', function (done) {
       this.view.config.set('viewHierarchy', 'flat');
       this.view.config.save();
       this.view.run({}, function () {

@@ -51,8 +51,14 @@ MeteorGenerator.prototype.askFor = function askFor() {
       type: 'list',
       name: 'cssPreprocessor',
       message: 'Choose a CSS Preprocessor',
-      choices: ['stylus', 'less', 'bootstrap', 'none']
-    },
+      choices: [
+        { name: 'stylus', value: 'stylus' },
+        { name: 'LESS', value: 'less' },
+        { name: 'Twitter Bootstrap', value: 'bootstrap' },
+        { name: 'LESS version of Twitter Bootstrap', value: 'nemo64:bootstrap' },
+        { name: 'None', value: 'none' }
+      ]
+    }
   ];
 
   this.prompt(prompts, function (props) {

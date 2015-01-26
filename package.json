@@ -1,7 +1,7 @@
 {
   "name": "generator-met",
   "version": "0.1.2",
-  "description": "A Meteor.js app scaffolding tool using Yeoman.",
+  "description": "Meteor JS app scaffolding tool using Yeoman.",
   "keywords": [
     "yeoman-generator"
   ],

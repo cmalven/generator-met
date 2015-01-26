@@ -54,8 +54,7 @@ MeteorGenerator.prototype.askFor = function askFor() {
       choices: [
         { name: 'stylus', value: 'stylus' },
         { name: 'LESS', value: 'less' },
-        { name: 'Twitter Bootstrap', value: 'bootstrap' },
-        { name: 'LESS version of Twitter Bootstrap', value: 'nemo64:bootstrap' },
+        { name: 'Twitter Bootstrap', value: 'nemo64:bootstrap' },
         { name: 'None', value: 'none' }
       ]
     }

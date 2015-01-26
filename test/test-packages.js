@@ -59,17 +59,7 @@ describe('meteor coffee generator', function () {
       });
     });
     
-    it('creates app with Twitter Bootstrap', function (done) {
-      helpers.mockPrompt(this.app, {
-        'cssPreprocessor': 'bootstrap'
-      });
-      this.app.run({}, function () {
-        helpers.assertFileContent('.meteor/packages', /\nbootstrap\n/);
-        done();
-      });
-    });
-    
-    it('creates app with LESS version of Twitter Bootstrap', function (done) {
+    it('creates app Twitter Bootstrap support', function (done) {
       helpers.mockPrompt(this.app, {
         'cssPreprocessor': 'nemo64:bootstrap'
       });
@@ -87,7 +77,6 @@ describe('meteor coffee generator', function () {
         helpers.assertNoFileContent([
           ['.meteor/packages', /\nstylus\n/],
           ['.meteor/packages', /\nless\n/],
-          ['.meteor/packages', /\nbootstrap\n/],
           ['.meteor/packages', /\nless\nnemo64:bootstrap\n/]
         ]);
         done();

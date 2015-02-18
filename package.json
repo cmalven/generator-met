@@ -1,12 +1,12 @@
 {
-  "name": "generator-meteor-coffee",
-  "version": "0.0.9",
-  "description": "A Meteor.js app scaffolding tool using Yeoman.",
+  "name": "generator-met",
+  "version": "0.1.3",
+  "description": "Meteor JS app scaffolding tool using Yeoman.",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/cmalven/generator-meteor-coffee",
-  "bugs": "https://github.com/cmalven/generator-meteor-coffee/issues",
+  "homepage": "https://github.com/cmalven/generator-met",
+  "bugs": "https://github.com/cmalven/generator-met/issues",
   "author": {
     "name": "",
     "email": "",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cmalven/generator-meteor-coffee.git"
+    "url": "git://github.com/cmalven/generator-met.git"
   },
   "scripts": {
     "test": "mocha"

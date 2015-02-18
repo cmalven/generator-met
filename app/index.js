@@ -53,6 +53,12 @@ MetGenerator.prototype.askFor = function askFor() {
       message: 'Choose a CSS Preprocessor',
       choices: ['stylus', 'less', 'bootstrap', 'none']
     },
+    {
+      type: 'confirm',
+      name: 'security',
+      message: 'Would you like to use ongoworks:security for write security on your collections?',
+      default: false
+    }
   ];
 
   this.prompt(prompts, function (props) {
@@ -60,8 +66,10 @@ MetGenerator.prototype.askFor = function askFor() {
     this.projectSummary = props.projectSummary;
     this.viewHierarchy = props.viewHierarchy;
     this.cssPreprocessor = props.cssPreprocessor;
+    this.security = props.security;
     
     this.config.set('viewHierarchy', this.viewHierarchy);
+    this.config.set('security', this.security);
     this.config.save();
 
     cb();
@@ -104,6 +112,9 @@ MetGenerator.prototype.server = function app() {
   this.copy('server/main.coffee', 'server/main.coffee');
   this.copy('server/methods.coffee', 'server/methods.coffee');
   this.mkdir('server/publications');
+  if (this.security) {
+    this.mkdir('server/security');
+  }
 };
 
 MetGenerator.prototype.app = function app() {

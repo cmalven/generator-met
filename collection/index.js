@@ -28,6 +28,10 @@ CollectionGenerator.prototype.askFor = function askFor() {
 CollectionGenerator.prototype.files = function files() {
   var collectionsPath = 'lib/collections/';
   var publicationsPath = 'server/publications/';
+  var securityPath = 'server/security/';
   this.template('_collection.coffee', collectionsPath + this.name + '.coffee');
   this.template('_publication.coffee', publicationsPath + this.name + '.coffee');
+  if (this.config.get('security', false)) {
+    this.template('_security.coffee', securityPath + this.name + '.coffee');
+  }
 };

@@ -4,7 +4,7 @@
 var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('meteor coffee generator', function () {
+describe('met generator', function () {
     beforeEach(function (done) {
         helpers.testDirectory(path.join(__dirname, 'tmp'), function (err) {
             if (err) {
@@ -16,9 +16,14 @@ describe('meteor coffee generator', function () {
               '../../view']
             );
             
-            this.view = helpers.createGenerator('mete:view',
+            this.view = helpers.createGenerator('met:view',
               ['../../view'],
               ['testview']
+            );
+            
+            this.collection = helpers.createGenerator('met:collection',
+              ['../../collection'],
+              ['testcollection']
             );
             
             done();
@@ -75,6 +80,31 @@ describe('meteor coffee generator', function () {
         helpers.assertFile([
           'client/views/testview.html',
           'client/views/testview.coffee'
+        ]);
+        done();
+      });
+    });
+    
+    it('creates collection without security', function (done) {
+      this.collection.config.set('security', false);
+      this.collection.config.save();
+      this.collection.run({}, function () {
+        helpers.assertFile([
+          'lib/collections/testcollection.coffee',
+          'server/publications/testcollection.coffee'
+        ]);
+        done();
+      });
+    });
+    
+    it('creates collection with security', function (done) {
+      this.collection.config.set('security', true);
+      this.collection.config.save();
+      this.collection.run({}, function () {
+        helpers.assertFile([
+          'lib/collections/testcollection.coffee',
+          'server/publications/testcollection.coffee',
+          'server/security/testcollection.coffee'
         ]);
         done();
       });

@@ -54,7 +54,8 @@ MetGenerator.prototype.askFor = function askFor() {
       choices: [
         { name: 'stylus', value: 'stylus' },
         { name: 'LESS', value: 'less' },
-        { name: 'Twitter Bootstrap', value: 'nemo64:bootstrap' },
+        { name: 'Twitter Bootstrap (twbs:bootstrap)', value: 'twbs:bootstrap' },
+        { name: 'Twitter Bootstrap (nemo64:bootstrap)', value: 'nemo64:bootstrap' },
         { name: 'None', value: 'none' }
       ]
     }
@@ -77,7 +78,6 @@ MetGenerator.prototype.meteor = function app() {
   this.mkdir('.meteor');
   this.copy('meteor/gitignore', '.meteor/.gitignore');
   this.template('meteor/_packages', '.meteor/packages');
-  this.copy('meteor/release', '.meteor/release');
 };
 
 MetGenerator.prototype.lib = function app() {
@@ -101,6 +101,12 @@ MetGenerator.prototype.client = function app() {
   } else {
     this.copy('client/views/layout/layout.html', 'client/views/layout.html');
     this.copy('client/views/loading/loading.html', 'client/views/loading.html');
+  }
+  this.mkdir('client/stylesheets');
+  if (this.cssPreprocessor == 'nemo64:bootstrap') {
+    this.mkdir('client/stylesheets/vendor');
+    this.copy('client/stylesheets/vendor/custom.bootstrap.json', 'client/stylesheets/vendor/custom.bootstrap.json');
+    this.template('client/stylesheets/_styles.less', 'client/stylesheets/styles.less');
   }
 };
 

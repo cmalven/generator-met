@@ -4,7 +4,7 @@
 var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('meteor coffee generator', function () {
+describe('met generator', function () {
     beforeEach(function (done) {
         helpers.testDirectory(path.join(__dirname, 'tmp'), function (err) {
             if (err) {
@@ -16,7 +16,7 @@ describe('meteor coffee generator', function () {
               '../../view']
             );
             
-            this.view = helpers.createGenerator('mete:view',
+            this.view = helpers.createGenerator('met:view',
               ['../../view'],
               ['testview']
             );
@@ -51,6 +51,20 @@ describe('meteor coffee generator', function () {
           'client/views/loading.html',
           'client/views/index.html',
           'client/views/index.coffee'
+        ]);
+        done();
+      });
+    });
+    
+    it('creates app with nemo64:bootstrap', function (done) {
+
+      helpers.mockPrompt(this.app, {
+        'cssPreprocessor': 'nemo64:bootstrap'
+      });
+      this.app.run({}, function () {
+        helpers.assertFile([
+          'client/stylesheets/vendor/custom.bootstrap.json',
+          'client/stylesheets/styles.less'
         ]);
         done();
       });

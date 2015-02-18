@@ -4,14 +4,14 @@
 var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('meteor coffee generator', function () {
+describe('met generator', function () {
     beforeEach(function (done) {
         helpers.testDirectory(path.join(__dirname, 'tmp'), function (err) {
             if (err) {
                 return done(err);
             }
 
-            this.app = helpers.createGenerator('meteor-coffee:app',
+            this.app = helpers.createGenerator('met:app',
               ['../../app',
               '../../view']
             );

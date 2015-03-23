@@ -8,6 +8,7 @@ coffeescript<% if (cssPreprocessor == 'stylus') { %>
 stylus<% } %><% if (cssPreprocessor == 'less') { %>
 less<% } %><% if (cssPreprocessor == 'bootstrap') { %>
 bootstrap<% } %>
+mquandalle:bower
 jquery
 iron:router
 fastclick

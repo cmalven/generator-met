@@ -96,3 +96,7 @@ Scaffolds and installs a new package called "my-package".
 `yo met:collection animals`
 
 Creates a new collection in `lib/collections/animals.coffee` and publication in `server/publications/animals.coffee`.
+
+## Adding Frontend Dependencies
+
+The generator includes [meteor-bower](https://github.com/mquandalle/meteor-bower) for managing frontend packages. To install a package, just use `bower install [package-name] --save` and all will automatically be added every time you run `meteor`.

@@ -112,4 +112,6 @@ MetGenerator.prototype.app = function app() {
   this.copy('gitignore', '.gitignore');
   this.template('_README.md', 'README.md');
   this.template('_index.html', 'index.html');
+  this.template('_bower.json', 'bower.json');
+  this.copy('.bowerrc', '.bowerrc');
 };
